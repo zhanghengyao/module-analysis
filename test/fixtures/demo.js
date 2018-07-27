@@ -1,15 +1,10 @@
 module.exports = class demo {
-  fuck({name, className=3, shit: si}, run, sex=1, [...param]) { 
-    if (sex > 1) {
-      console.log();
-    } else if (run > 0 && name < 1  && go() && shit === 0 && shit) {
-      
-    }
+  async fuck({name, className=3, shit: si}, run, sex=1, [...param]) { 
+    const  service  = this.ctx.service
+    const res = await service.article(name, run);
+    const {
+      data,
+    } = res;
+    data.map()
   }
-  get agg() {}
-  set age(v=2) {
-    return v;
-  }
-  fun(...param){}
-  go(){}
 }

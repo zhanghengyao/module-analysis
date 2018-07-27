@@ -1,6 +1,5 @@
-const babel = require('babel-core');
-const { bodyParser, methodTypeParser, paramsParser } = require('../parser');
-const utils = require('../utils');
+const { branchParse, methodTypeParse, paramsParse, callDependenciesParse } = require('../parser');
+const { babel, loadFile } = require('../utils');
 
 function moduleAnalysis(codeString) {
   const moduleMetaData = {};
@@ -9,27 +8,30 @@ function moduleAnalysis(codeString) {
     ClassMethod: {
       enter(path) {
         const { kind, key, params, generator, async } = path.node;
-        const type = methodTypeParser({ generator, async });
-        const args = paramsParser(params);
-        bodyParser(path);
+        const type = methodTypeParse({ generator, async });
+        const args = paramsParse(params);
+        const branch = branchParse(path);
+        const callDependencies = callDependenciesParse(path);
+        // console.log(body.callDependencies)
         const functionMeta = {
           kind,
           type,
           params: args,
-          branch: [],
-          callDependencies: []
+          branch,
+          callDependencies
         };
         moduleMetaData[key.name] = functionMeta;
       }
     }
   });
+  // console.log(moduleMetaData);
+  Object.keys(moduleMetaData).forEach(key => {
+    console.log(moduleMetaData[key].callDependencies)
+  })
   return moduleMetaData;
 }
 
 module.exports = function (filePath) {
-  return utils.loadFile(filePath)
-  .then(codeString => moduleAnalysis(codeString))
-  .catch(error => {
-    throw error;
-  });
+  return loadFile(filePath)
+  .then(codeString => moduleAnalysis(codeString));
 };

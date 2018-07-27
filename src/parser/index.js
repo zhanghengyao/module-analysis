@@ -1,8 +1,10 @@
-const bodyParser = require('./body-parser');
-const paramsParser = require('./params-parser');
-const methodTypeParser = require('./method-type-parser');
+const callDependenciesParse = require('./call-dependencies-parse');
+const paramsParse = require('./params-parse');
+const methodTypeParse = require('./method-type-parse');
+const branchParse = require('./branch-parse');
 module.exports = {
-  bodyParser,
-  paramsParser,
-  methodTypeParser
+  callDependenciesParse,
+  paramsParse,
+  methodTypeParse,
+  branchParse
 }
