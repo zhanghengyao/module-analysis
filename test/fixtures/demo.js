@@ -1,10 +1,6 @@
-module.exports = class demo {
-  async fuck({name, className=3, shit: si}, run, sex=1, [...param]) { 
-    const  service  = this.ctx.service
-    const res = await service.article(name, run);
-    const {
-      data,
-    } = res;
-    data.map()
-  }
+exports.convert = function convert(str){ 
+  str = str.replace(/(\\u)(\w{1,4})/gi, (unicode) => { 
+      return (String.fromCharCode(parseInt((escape(unicode).replace(/(%5Cu)(\w{1,4})/g,"$2")),16))); 
+  });
+  return str; 
 }
