@@ -1,7 +1,7 @@
 {
-  "name": "module-analysis",
+  "name": "module-meta-analysis",
   "version": "0.0.1",
-  "description": "module analysis",
+  "description": "module meta analysis",
   "main": "index.js",
   "directories": {
     "example": "examples"
