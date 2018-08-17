@@ -1,6 +1,6 @@
 {
   "name": "module-meta-analysis",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "module meta analysis",
   "main": "index.js",
   "directories": {
@@ -23,7 +23,7 @@
     "url": "https://github.com/zhanghengyao/module-analysis/issues"
   },
   "homepage": "https://github.com/zhanghengyao/module-analysis#readme",
-  "devDependencies": {
+  "dependencies": {
     "babel-core": "^6.26.3",
     "babel-generator": "^6.26.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0"
