@@ -1,6 +1,6 @@
 {
   "name": "module-meta-analysis",
-  "version": "0.1.0",
+  "version": "0.0.5",
   "description": "module meta analysis",
   "main": "index.js",
   "directories": {
