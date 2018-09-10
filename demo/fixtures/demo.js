@@ -1,13 +1,15 @@
+// gsdg
+const a = require('assert');
+// fuck
 module.exports = {
 	name:{sex: () => 'test name'},
-  	si: function*(){},
+    si: function*(){},
+    // nb
   	ni: (a) => {
       resizeBy()
     },
+    // gan
     gan(){
       console.log('gan')
     }
 }
-// module.exports = function(a) {
-
-// }
