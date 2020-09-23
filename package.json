@@ -13,9 +13,6 @@
     "type": "git",
     "url": "git+https://github.com/zhanghengyao/module-analysis.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/zhanghengyao"
-  },
   "keywords": [
     "module",
     "analysis"
